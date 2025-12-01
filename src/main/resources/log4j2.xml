@@ -3,7 +3,7 @@
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
         <Property name="LOG_DIR">logs</Property>
-        <Property name="FILE_NAME">app</Property>
+        <Property name="FILE_NAME">composite</Property>
     </Properties>
 
     <Appenders>
