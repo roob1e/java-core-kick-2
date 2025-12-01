@@ -1,6 +1,4 @@
-package com.assxmblxr.composite.component;
-
-import java.util.List;
+package com.assxmblxr.composite.composite;
 
 public interface TextComponent {
   @Override
@@ -8,5 +6,7 @@ public interface TextComponent {
 
   void addChild(TextComponent child);
 
-  List<TextComponent> getChildren();
+  TextComponent[] getChildren();
+
+  int count();
 }

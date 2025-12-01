@@ -1,11 +1,9 @@
-package com.assxmblxr.composite.component.impl;
+package com.assxmblxr.composite.composite.impl;
 
-import com.assxmblxr.composite.component.TextComponent;
+import com.assxmblxr.composite.composite.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class TextLeaf implements TextComponent {
   private static final Logger logger = LogManager.getLogger();
@@ -17,19 +15,31 @@ public class TextLeaf implements TextComponent {
   }
 
   @Override
-  public List<TextComponent> getChildren() {
+  public TextComponent[] getChildren() {
     logger.warn("TextLeaf can't have children");
-    return new ArrayList<>();
+    throw new UnsupportedOperationException("TextLeaf can't have children");
   }
 
   @Override
   public void addChild(TextComponent child) {
     logger.warn("TextLeaf can't have children");
+    throw new UnsupportedOperationException("TextLeaf can't have children");
   }
 
   @Override
   public String toString() {
     return String.valueOf(character);
+  }
+
+  @Override
+  public int count() {
+    if (Character.isLetter(character)) {
+      return 1;
+    } else if (character == '\t' || character == '\n') {
+      return 0;
+    } else {
+      return 0;
+    }
   }
 
   @Override

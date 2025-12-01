@@ -1,6 +1,6 @@
-package com.assxmblxr.composite.component.impl;
+package com.assxmblxr.composite.composite.impl;
 
-import com.assxmblxr.composite.component.TextComponent;
+import com.assxmblxr.composite.composite.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,8 +16,8 @@ public class TextComposite implements TextComponent {
     logger.info("TextComposite created");
   }
 
-  public List<TextComponent> getChildren() {
-    return List.copyOf(children);
+  public TextComponent[] getChildren() {
+    return children.toArray(new TextComponent[0]);
   }
 
   @Override
@@ -33,5 +33,12 @@ public class TextComposite implements TextComponent {
       builder.append(child.toString());
     }
     return builder.toString();
+  }
+
+  @Override
+  public int count() {
+    return children.stream()
+            .mapToInt(TextComponent::count)
+            .sum();
   }
 }

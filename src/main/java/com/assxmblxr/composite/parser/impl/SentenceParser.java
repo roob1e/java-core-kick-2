@@ -1,7 +1,8 @@
 package com.assxmblxr.composite.parser.impl;
 
-import com.assxmblxr.composite.component.TextComponent;
-import com.assxmblxr.composite.component.impl.TextComposite;
+import com.assxmblxr.composite.composite.TextComponent;
+import com.assxmblxr.composite.composite.impl.TextComposite;
+import com.assxmblxr.composite.composite.impl.TextLeaf;
 import com.assxmblxr.composite.parser.TextParser;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class SentenceParser implements TextParser {
 
     for (String part : parts) {
       paragraph.addChild(successor.parse(part));
+      paragraph.addChild(new TextLeaf('\u0020'));
     }
     return paragraph;
   }

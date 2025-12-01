@@ -1,7 +1,7 @@
 package com.assxmblxr.composite.parser.impl;
 
-import com.assxmblxr.composite.component.TextComponent;
-import com.assxmblxr.composite.component.impl.TextComposite;
+import com.assxmblxr.composite.composite.TextComponent;
+import com.assxmblxr.composite.composite.impl.TextComposite;
 import com.assxmblxr.composite.parser.TextParser;
 
 import java.util.List;
