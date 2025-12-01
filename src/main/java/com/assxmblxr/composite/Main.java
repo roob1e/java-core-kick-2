@@ -31,7 +31,7 @@ public class Main {
             layout.
             \t\
             Bye.""";
-
+    System.out.println(paragraphParser.parse(text).toString());
     System.out.println(service.sortSentences(text));
     System.out.println(service.swapLexemes(text));
   }
