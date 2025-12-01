@@ -26,7 +26,7 @@ public class SentenceParser implements TextParser {
 
     for (String part : parts) {
       paragraph.addChild(successor.parse(part));
-      paragraph.addChild(new TextLeaf('\u0020'));
+      paragraph.addChild(new TextLeaf(' '));
     }
     return paragraph;
   }

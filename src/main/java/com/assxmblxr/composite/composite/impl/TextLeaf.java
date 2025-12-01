@@ -4,7 +4,6 @@ import com.assxmblxr.composite.composite.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 public class TextLeaf implements TextComponent {
   private static final Logger logger = LogManager.getLogger();
   private final char character;
@@ -48,5 +47,10 @@ public class TextLeaf implements TextComponent {
     if (o == null || getClass() != o.getClass()) return false;
     TextLeaf that = (TextLeaf) o;
     return character == that.character;
+  }
+
+  @Override
+  public int hashCode() {
+    return character;
   }
 }

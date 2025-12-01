@@ -44,9 +44,11 @@ public class TextComponentAnalysisService implements AnalysisService {
     for (TextComponent sentence : sentences) {
       if (sentence instanceof TextComposite) {
         TextComponent[] words = sentence.getChildren();
-        TextComponent temp = words[0];
-        words[0] = words[words.length - 1];
-        words[words.length - 1] = temp;
+        if (words.length > 1) {
+          TextComponent temp = words[0];
+          words[0] = words[words.length - 1];
+          words[words.length - 1] = temp;
+        }
         for (TextComponent word : words) {
           sb.append(word.toString());
         }
@@ -56,5 +58,4 @@ public class TextComponentAnalysisService implements AnalysisService {
     }
     return sb.toString();
   }
-
 }
