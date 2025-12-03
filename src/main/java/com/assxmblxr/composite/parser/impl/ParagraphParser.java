@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ParagraphParser implements TextParser {
   private final TextParser successor;
-  private static final String REGEX = "\n\\s+";
+  private static final String REGEX = "\n\\s+|\n";
 
   public ParagraphParser(TextParser successor) {
     this.successor = successor;

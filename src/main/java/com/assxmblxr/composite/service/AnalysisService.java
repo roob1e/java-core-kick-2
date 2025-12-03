@@ -9,5 +9,5 @@ public interface AnalysisService {
 
   TextComponent sortSentences(TextComponent textComponent);
 
-  String swapLexemes(TextComponent textComponent);
+  TextComponent swapLexemes(TextComponent textComponent);
 }

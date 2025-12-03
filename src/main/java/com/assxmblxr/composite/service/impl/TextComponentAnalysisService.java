@@ -40,7 +40,6 @@ public class TextComponentAnalysisService implements AnalysisService {
         }
       }
 
-
       for (String word : words) {
         if (!results.containsKey(word)) {
           HashSet<Integer> set = new HashSet<>();
@@ -71,12 +70,12 @@ public class TextComponentAnalysisService implements AnalysisService {
             .filter(s -> !s.isEmpty())
             .sorted(Comparator.comparingInt(String::length))
             .toList();
-    var sortedText = String.join("", sorted);
+    var sortedText = String.join("\n", sorted);
     return paragraphParser.parse(sortedText);
   }
 
   @Override
-  public String swapLexemes(TextComponent textComponent) {
+  public TextComponent swapLexemes(TextComponent textComponent) {
     String text = textComponent.toString();
 
     Pattern sentencePattern = Pattern.compile("[^.!?]+[.!?]");
@@ -94,7 +93,8 @@ public class TextComponentAnalysisService implements AnalysisService {
     if (lastEnd < text.length()) {
       result.append(text.substring(lastEnd));
     }
-    return result.toString();
+    String swappedText = result.toString();
+    return paragraphParser.parse(swappedText);
   }
 
   private String swapWordsInSentence(String sentence) {

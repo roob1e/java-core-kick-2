@@ -33,6 +33,6 @@ public class Main {
             \t\
             Bye.""";
     TextComponent composite = paragraphParser.parse(text);
-    System.out.println(service.swapLexemes(composite));
+    System.out.println(service.sortSentences(composite));
   }
 }
