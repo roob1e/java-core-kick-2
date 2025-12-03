@@ -41,4 +41,13 @@ public class TextComposite implements TextComponent {
             .mapToInt(TextComponent::count)
             .sum();
   }
+
+  @Override
+  public String extractText() {
+    StringBuilder builder = new StringBuilder();
+    for (TextComponent child : children) {
+      builder.append(child.extractText());
+    }
+    return builder.toString();
+  }
 }

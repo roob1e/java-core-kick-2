@@ -9,4 +9,6 @@ public interface TextComponent {
   TextComponent[] getChildren();
 
   int count();
+
+  String extractText();
 }

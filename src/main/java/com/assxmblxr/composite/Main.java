@@ -1,5 +1,6 @@
 package com.assxmblxr.composite;
 
+import com.assxmblxr.composite.composite.TextComponent;
 import com.assxmblxr.composite.parser.impl.LexemeParser;
 import com.assxmblxr.composite.parser.impl.ParagraphParser;
 import com.assxmblxr.composite.parser.impl.SentenceParser;
@@ -31,8 +32,7 @@ public class Main {
             layout.
             \t\
             Bye.""";
-    System.out.println(paragraphParser.parse(text).toString());
-    System.out.println(service.sortSentences(text));
-    System.out.println(service.swapLexemes(text));
+    TextComponent composite = paragraphParser.parse(text);
+    System.out.println(service.swapLexemes(composite));
   }
 }

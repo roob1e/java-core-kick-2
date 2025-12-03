@@ -42,6 +42,15 @@ public class TextLeaf implements TextComponent {
   }
 
   @Override
+  public String extractText() {
+    if (Character.isLetter(character) || character == '-' || character == ' ') {
+      return String.valueOf(character);
+    } else {
+      return "";
+    }
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

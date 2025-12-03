@@ -2,12 +2,12 @@ package com.assxmblxr.composite.service;
 
 import com.assxmblxr.composite.composite.TextComponent;
 
-import java.util.List;
-
+@SuppressWarnings("unused")
 public interface AnalysisService {
-  @SuppressWarnings("unused")
-  int findMaxSharedWordSentences(TextComponent textComponent);
-  List<String> sortSentences(String text);
-  String swapLexemes(String text);
 
+  int findMaxSharedWordSentences(TextComponent textComponent);
+
+  TextComponent sortSentences(TextComponent textComponent);
+
+  String swapLexemes(TextComponent textComponent);
 }
